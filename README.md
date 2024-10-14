@@ -20,14 +20,6 @@ You can install `npeet_plus` via PyPI:
 pip install npeet_plus
 ```
 
-Alternatively, clone this repository and install it manually:
-
-```bash
-git clone https://github.com/yourusername/npeet_plus.git
-cd npeet_plus
-pip install .
-```
-
 ## Usage
 
 ### Importing the package
