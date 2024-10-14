@@ -682,3 +682,15 @@ if __name__ == "__main__":
     print(f"Observed MI: {mi_observed_dep}")
     print(f"P-value: {p_value_dep}")
 
+    print("\nEstimating MI and confidence interval between dependent random variables X and Y:")
+    np.random.seed(42)
+    n_samples = 500
+    x = np.random.randn(n_samples, 1)
+    y = x + 0.5 * np.random.randn(n_samples, 1)
+    mi_observed, lower_bound, upper_bound, mi_bootstrap = mi_confidence_interval(
+        x, y, k=3, n_bootstraps=1000, confidence_level=0.95
+    )
+    print(f"Observed MI: {mi_observed}")
+    print(f"Confidence Interval: [{lower_bound}, {upper_bound}]")
+
+
