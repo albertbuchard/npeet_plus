@@ -4,7 +4,7 @@ setup(
     name='npeet_plus',
     version='0.1.0',
     author='Greg Ver Steeg',
-    author_email='albert.buchard@me.com',
+    author_email='albert.buchard@gmail.com',
     description='Non-parametric entropy estimation toolbox plus additional features',
     long_description=open('README.md').read(),
     long_description_content_type='text/markdown',

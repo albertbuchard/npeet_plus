@@ -116,6 +116,7 @@ def mi_pvalue(
     n_permutations=1000,
     random_state=None,
     warning=True,
+    alpha=0
 ):
     """
     Compute the mutual information between x and y, and estimate the p-value
@@ -145,6 +146,8 @@ def mi_pvalue(
         Seed for random number generator.
     warning : bool, default=True
         Whether to show warnings when insufficient data after conditioning.
+    alpha : float, default=0
+        Regularization parameter for LNC correction.
 
     Returns
     -------
@@ -160,7 +163,7 @@ def mi_pvalue(
     # Select the appropriate mutual information function
     if mi_type == "mi":
         mi_func = mi
-        mi_kwargs = {"k": k, "base": base}
+        mi_kwargs = {"k": k, "base": base, "alpha": alpha}
     elif mi_type == "midd":
         mi_func = midd
         mi_kwargs = {"base": base}
@@ -198,6 +201,7 @@ def mi_confidence_interval(
     confidence_level=0.95,
     random_state=None,
     warning=True,
+    alpha=0
 ):
     """
     Compute the mutual information between x and y, and estimate the confidence interval
@@ -229,6 +233,8 @@ def mi_confidence_interval(
         Seed for random number generator.
     warning : bool, default=True
         Whether to show warnings when insufficient data after conditioning.
+    alpha : float, default=0
+        Regularization parameter for LNC correction.
 
     Returns
     -------
@@ -257,7 +263,7 @@ def mi_confidence_interval(
     # Select the appropriate mutual information function
     if mi_type == "mi":
         mi_func = mi
-        mi_kwargs = {"k": k, "base": base}
+        mi_kwargs = {"k": k, "base": base, "alpha": alpha}
     elif mi_type == "midd":
         mi_func = midd
         mi_kwargs = {"base": base}
